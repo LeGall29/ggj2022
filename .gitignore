@@ -1,6 +1,6 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
-# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 /[Ll]ibrary/
 /[Tt]emp/
@@ -9,13 +9,20 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/.idea/
+/Documentation/obj/.cache/
+xdoc/
+/_site/
+
+# Unity Recorder
+/[Rr]ecordings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
 
-# Recordings can get excessive in size
-/[Rr]ecordings/
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -25,6 +32,9 @@
 
 # Visual Studio cache directory
 .vs/
+
+# Visual Studio cache directory
+.vsconfig
 
 # Gradle cache directory
 .gradle/
@@ -59,7 +69,7 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
-*.app
+*.unitypackage.meta
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -70,3 +80,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# ignore hidden ARCore files
+/[Aa]ssets/[Ss]treamingAssets/HiddenARCore*
+
+#UWP certificate
+*.pfx
+*.pfx.meta
+
+#ARFoundationRemote
+/ARFoundationRemoteCompanionApp
