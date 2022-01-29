@@ -25,6 +25,8 @@ public class StepViewer : MonoBehaviour
 
     private Camera mainCamera;
 
+    private int currentStep;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -32,9 +34,17 @@ public class StepViewer : MonoBehaviour
 
     public void MoveCameraTo(int _step)
     {
+        currentStep = _step;
         Vector3 newPosition = new Vector3(listSteps[_step].transform.position.x + offset.x, listSteps[_step].transform.position.y + offset.y, transform.position.z);
         transform.DOMove(newPosition, 1).SetEase(Ease.OutQuart);
     }
+
+    public void MoveCameraToNextStep()
+    {
+        int temp = currentStep + 1;
+        MoveCameraTo(temp);
+    }
+
     public void ZoomCamera(System.Action _callbackOnZoomed)
     {
         mainCamera.DOOrthoSize(zoomSize, 1f).SetEase(Ease.OutQuart).OnComplete(() => _callbackOnZoomed?.Invoke());

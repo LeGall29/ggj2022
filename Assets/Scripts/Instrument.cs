@@ -42,9 +42,11 @@ public class Instrument : MonoBehaviour, IPointerClickHandler
         {
             PlayPhrase(_action);
             currentBuildActionIndex++;
+            instructionPanel.NextStep();
             if(currentBuildActionIndex == actionsToBuild.Length)
             {
                 audioSource.PlayOneShot(fullMusic);
+                instructionPanel.WaitAndClose(fullMusic.length);
                 Debug.Log("you win!");
             }
         }

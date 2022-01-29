@@ -10,6 +10,11 @@ public class InstructionPanel : MonoBehaviour
     [SerializeField] private GameObject instruments;
     [SerializeField] private GameObject UIFront;
 
+    public void NextStep()
+    {
+        stepViewer.MoveCameraToNextStep();
+    }
+
     public void Open(Instrument _instrument)
     {
         instruments.SetActive(false);
@@ -35,5 +40,11 @@ public class InstructionPanel : MonoBehaviour
            });
         });
     }
+
+    public void WaitAndClose(float _time)
+    {
+        Invoke(nameof(Close), _time);
+    }
+
 
 }
