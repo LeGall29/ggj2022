@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(AudioSource))]
-public class Instrument : MonoBehaviour
+public class Instrument : MonoBehaviour, IPointerClickHandler
 {
+    [Header("References")]
+    [SerializeField] private InstructionPanel instructionPanel;
+
+    [Header("Music Setup")]
     [SerializeField] private List<NoteDictionnary> notesSFX;
     [SerializeField] private List<ActionDictionnary> actionsSFX;
     [SerializeField] private BuildAction[] actionsToBuild;
@@ -44,6 +49,11 @@ public class Instrument : MonoBehaviour
             }
         }
 
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        instructionPanel.Open(this);
     }
 }
 

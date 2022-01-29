@@ -30,7 +30,8 @@ Transform:
   m_GameObject: {fileID: 2509384624354675165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 45.05, y: 45.05, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,6 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -205,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9aaaaee43453941984c70646c77a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instructionPanel: {fileID: 0}
   notesSFX:
   - note: 0
     audioClip: {fileID: 8300000, guid: 3af25cac7f840954bac53d09118a77b4, type: 3}
@@ -242,3 +245,4 @@ MonoBehaviour:
   - actionType: 5
     audioClip: {fileID: 8300000, guid: 5acd4cc7d8daf6b47a15ce1648f08187, type: 3}
   actionsToBuild: 030000000400000004000000070000000500000006000000050000000100000006000000
+  fullMusic: {fileID: 8300000, guid: 4bee8c9f9e44ba04b91fc49be99aabb4, type: 3}
