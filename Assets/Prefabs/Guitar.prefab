@@ -109,7 +109,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -226,6 +226,19 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: f698a2b6ffd706848a29ed64751fbd6f, type: 3}
   actionsSFX:
   - actionType: 6
-    audioClip: {fileID: 8300000, guid: 450b348756dc02c419415a4df69bae11, type: 3}
+    audioClip: {fileID: 8300000, guid: 1726266527dd7a04aba58a4b8fe4ea37, type: 3}
   - actionType: 7
-    audioClip: {fileID: 8300000, guid: e4784ec3a8a43ab4d8d91058bf72426c, type: 3}
+    audioClip: {fileID: 8300000, guid: 0db1a79bf12b2b5449b4e582d39a682d, type: 3}
+  - actionType: 0
+    audioClip: {fileID: 8300000, guid: a9ebdcbd5787edb4f88021452c6c7581, type: 3}
+  - actionType: 1
+    audioClip: {fileID: 8300000, guid: 8bce92966154553478a6337546fa135d, type: 3}
+  - actionType: 2
+    audioClip: {fileID: 8300000, guid: ee3b8306c692f0c4189d5d3b4b0c0c78, type: 3}
+  - actionType: 3
+    audioClip: {fileID: 8300000, guid: 5c50572d0e6ac784f90e10b69fb12527, type: 3}
+  - actionType: 4
+    audioClip: {fileID: 8300000, guid: 5c8780f7528738d43a45e4f6b8d699a3, type: 3}
+  - actionType: 5
+    audioClip: {fileID: 8300000, guid: 5acd4cc7d8daf6b47a15ce1648f08187, type: 3}
+  actionsToBuild: 030000000400000004000000070000000500000006000000050000000100000006000000

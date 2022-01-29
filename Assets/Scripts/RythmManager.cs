@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,9 +9,10 @@ using UnityEngine.InputSystem;
 public class RythmManager : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private GameObject cursor;
     [SerializeField] private TextMeshProUGUI[] beatLabels;
     [SerializeField] private Transform[] cursorPoses;
-    [SerializeField] private GameObject cursor;
+    [SerializeField] private MusicalAction[] buildActions;
 
     [Header("Inputs")]
     [SerializeField] InputActionReference[] keyboardInputs;
@@ -18,7 +20,7 @@ public class RythmManager : MonoBehaviour
     int cursorIndex = -1;
     int lastCursorIndex = -1;
 
-    private List<int> playerMelody = new List<int>();
+    private List<Note> playerMelody = new List<Note>();
     private bool partitionIsPlaying = false;
     bool canAddNotes = true;
 
@@ -53,7 +55,7 @@ public class RythmManager : MonoBehaviour
         if (canAddNotes)
         {
             int noteID = int.Parse(obj.action.name[obj.action.name.Length - 1].ToString());
-            playerMelody.Add(noteID);
+            playerMelody.Add((Note)noteID-1);
             //Debug.Log("playerMelody.Count = " + playerMelody.Count);
             beatLabels[playerMelody.Count - 1].text = noteID.ToString();
         }
@@ -77,9 +79,10 @@ public class RythmManager : MonoBehaviour
         if (cursorIndex >= 4)
         {
             OnMelodyEnd?.Invoke();
-            Debug.Log("The end");
+            //Debug.Log("The end");
             cursorIndex = -1;
             lastCursorIndex = -1;
+            CheckIfMelodyIsAction();
             playerMelody.Clear();
             canAddNotes = true;
             partitionIsPlaying = false;
@@ -91,12 +94,9 @@ public class RythmManager : MonoBehaviour
             return;
         }
 
-        //Debug.Log("Cursor Index = " + cursorIndex);
-        int noteToPlay = int.Parse(beatLabels[cursorIndex].text) - 1;
-        //Debug.Log("note to play : " + noteToPlay);
-        Note currentNote = (Note)noteToPlay;
+        Note currentNote = playerMelody[cursorIndex];
 
-        //Debug.Log("Playing note = " + currentNote);
+        Debug.Log("Playing note = " + currentNote);
         MusicManager.Instance.currentInstrument.PlayNote(currentNote);
 
         beatLabels[cursorIndex].color = Color.green;
@@ -105,5 +105,18 @@ public class RythmManager : MonoBehaviour
             beatLabels[lastCursorIndex].color = Color.black;
 
         cursor.transform.position = cursorPoses[cursorIndex].position;
+    }
+
+    public void CheckIfMelodyIsAction()
+    {
+        foreach(MusicalAction a in buildActions)
+        {
+            //Debug.Log($"Trying to know if you played {a.actionType} ({a.phrase.ToString()})");
+            if(Enumerable.SequenceEqual(a.phrase,playerMelody.ToArray()))
+            {
+                Debug.Log("you are doing a " + a.actionType.ToString());
+                MusicManager.Instance.currentInstrument.PlayAction(a);
+            }
+        }
     }
 }

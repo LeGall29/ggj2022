@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbaa27fe50e02a34a8daf84fd9f48b8b, type: 3}
   m_Name: Lower
   m_EditorClassIdentifier: 
-  phrase: 00000000000000000000000000000000
-  action: 5
+  phrase: 05000000070000000600000007000000
+  actionType: 5

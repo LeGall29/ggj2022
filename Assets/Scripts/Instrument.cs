@@ -7,8 +7,11 @@ public class Instrument : MonoBehaviour
 {
     [SerializeField] private List<NoteDictionnary> notesSFX;
     [SerializeField] private List<ActionDictionnary> actionsSFX;
+    [SerializeField] private BuildAction[] actionsToBuild;
+    [SerializeField] private AudioClip fullMusic;
 
     private AudioSource audioSource;
+    private int currentBuildActionIndex;
 
     private void Start()
     {
@@ -23,6 +26,24 @@ public class Instrument : MonoBehaviour
     public void PlayPhrase(MusicalAction _action)
     {
         audioSource.PlayOneShot(actionsSFX.Find(x => x.actionType == _action.actionType).audioClip);
+    }
+
+    public void PlayAction(MusicalAction _action)
+    {
+        //TODO play the correct animation
+
+
+        if(_action.actionType == actionsToBuild[currentBuildActionIndex])
+        {
+            PlayPhrase(_action);
+            currentBuildActionIndex++;
+            if(currentBuildActionIndex == actionsToBuild.Length)
+            {
+                audioSource.PlayOneShot(fullMusic);
+                Debug.Log("you win!");
+            }
+        }
+
     }
 }
 
@@ -70,10 +91,10 @@ public class NoteDictionnary
 [System.Serializable]
 public class ActionDictionnary
 {
-    public Action actionType;
+    public BuildAction actionType;
     public AudioClip audioClip;
 
-    public ActionDictionnary(Action Key, AudioClip Value)
+    public ActionDictionnary(BuildAction Key, AudioClip Value)
     {
         this.actionType = Key;
         this.audioClip = Value;

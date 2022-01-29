@@ -7,10 +7,10 @@ using UnityEngine;
 public class MusicalAction : ScriptableObject
 {
     public Note[] phrase = new Note[4];
-    public Action actionType;
+    public BuildAction actionType;
 }
 
-public enum Action
+public enum BuildAction
 {
     Pull,
     Push,
