@@ -8,6 +8,8 @@ public class Instrument : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private InstructionPanel instructionPanel;
+    [SerializeField] private GameObject instrumentVisual;
+    [SerializeField] private GameObject instrumentVisualCompleted;
 
     [Header("Music Setup")]
     [SerializeField] private List<NoteDictionnary> notesSFX;
@@ -40,16 +42,20 @@ public class Instrument : MonoBehaviour
 
         if (_action.actionType == actionsToBuild[currentBuildActionIndex])
         {
+            PlayPhrase(_action);
             currentBuildActionIndex++;
             if (currentBuildActionIndex == actionsToBuild.Length)
             {
-                audioSource.PlayOneShot(fullMusic);
-                instructionPanel.WaitAndClose(fullMusic.length);
-                Debug.Log("you win!");
+                //audioSource.PlayOneShot(fullMusic);
+                instrumentVisual.SetActive(false);
+                instrumentVisualCompleted.SetActive(true);
+                //instructionPanel.WaitAndClose(fullMusic.length);
+                instructionPanel.Close();
+                if (name == "Guitar")
+                    MusicManager.Instance.AddGuitar();
             }
             else
             {
-                PlayPhrase(_action);
                 instructionPanel.NextStep();
             }
         }

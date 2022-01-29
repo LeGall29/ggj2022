@@ -17,6 +17,7 @@ public class InstructionPanel : MonoBehaviour
 
     public void Open(Instrument _instrument)
     {
+        MusicManager.Instance.Mute();
         instruments.SetActive(false);
         MusicManager.Instance.currentInstrument = _instrument;
         GetComponent<RectTransform>().DOAnchorPos3DX(0f, 1.7f).SetEase(Ease.OutBack).OnComplete(() =>
@@ -31,6 +32,7 @@ public class InstructionPanel : MonoBehaviour
 
     public void Close()
     {
+        MusicManager.Instance.Unmute();
         UIFront.SetActive(false);
         stepViewer.UnzoomCamera(() =>
         {
