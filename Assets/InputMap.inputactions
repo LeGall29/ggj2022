@@ -285,6 +285,17 @@
                     "action": "Note9",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0f17503a-10bc-46fa-a223-316cbbd1b28e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ChangeView",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -321,7 +332,7 @@
                 },
                 {
                     "name": "Point",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "32b35790-4ed0-4e9a-aa41-69ac6d629449",
                     "expectedControlType": "Vector2",
                     "processors": "",
