@@ -4,8 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(AudioClip))]
 public class RythmManager : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private TextMeshProUGUI[] beatLabels;
     [SerializeField] private Transform[] cursorPoses;
     [SerializeField] private GameObject cursor;
@@ -13,13 +15,22 @@ public class RythmManager : MonoBehaviour
     [Header("Inputs")]
     [SerializeField] InputActionReference[] keyboardInputs;
 
-    int cursorIndex = 0;
-    int lastCursorIndex = 0;
+    int cursorIndex = -1;
+    int lastCursorIndex = -1;
 
     private List<int> playerMelody = new List<int>();
     private bool partitionIsPlaying = false;
-
     bool canAddNotes = true;
+
+    private AudioSource audioSource;
+
+    public event System.Action OnMelodyEnd;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        OnMelodyEnd += StartBeat;
+    }
 
     private void OnEnable()
     {
@@ -31,13 +42,19 @@ public class RythmManager : MonoBehaviour
         }
     }
 
+    private void StartBeat()
+    {
+        audioSource.Play();
+        OnMelodyEnd -= StartBeat;
+    }
+
     private void KeyboardNotePressed(InputAction.CallbackContext obj)
     {
         if (canAddNotes)
         {
             int noteID = int.Parse(obj.action.name[obj.action.name.Length - 1].ToString());
             playerMelody.Add(noteID);
-            Debug.Log("playerMelody.Count = " + playerMelody.Count);
+            //Debug.Log("playerMelody.Count = " + playerMelody.Count);
             beatLabels[playerMelody.Count - 1].text = noteID.ToString();
         }
 
@@ -55,12 +72,14 @@ public class RythmManager : MonoBehaviour
             return;
 
         lastCursorIndex = cursorIndex;
+        cursorIndex++;
 
-        if (cursorIndex < 3)
-            cursorIndex++;
-        else
+        if (cursorIndex >= 4)
         {
-            cursorIndex = 0;
+            OnMelodyEnd?.Invoke();
+            Debug.Log("The end");
+            cursorIndex = -1;
+            lastCursorIndex = -1;
             playerMelody.Clear();
             canAddNotes = true;
             partitionIsPlaying = false;
@@ -69,10 +88,21 @@ public class RythmManager : MonoBehaviour
                 t.text = "";
                 t.color = Color.black;
             }
+            return;
         }
 
+        //Debug.Log("Cursor Index = " + cursorIndex);
+        int noteToPlay = int.Parse(beatLabels[cursorIndex].text) - 1;
+        //Debug.Log("note to play : " + noteToPlay);
+        Note currentNote = (Note)noteToPlay;
+
+        //Debug.Log("Playing note = " + currentNote);
+        MusicManager.Instance.currentInstrument.PlayNote(currentNote);
+
         beatLabels[cursorIndex].color = Color.green;
-        beatLabels[lastCursorIndex].color = Color.black;
+
+        if (lastCursorIndex >= 0)
+            beatLabels[lastCursorIndex].color = Color.black;
 
         cursor.transform.position = cursorPoses[cursorIndex].position;
     }
