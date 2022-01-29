@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: d134578bc487aff49ab2cefabe476cd2
+guid: 866a912f7f1f8164b908fc2e6ccc00ce
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mergedBlocksMat
+    second: {fileID: 2100000, guid: e5c0a67c9fa5bc5438ccb37d9292b439, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: af565862157d6e447b55a2bbede8a8f0
+guid: d134578bc487aff49ab2cefabe476cd2
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bricks
+    second: {fileID: 2100000, guid: 3a7e7f0d61613dd46979b3611b0a40d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bricksDark
+    second: {fileID: 2100000, guid: 403f7ae350f37764b81e493f0508a9fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mergedBlocksMat
+    second: {fileID: 2100000, guid: 3a7e7f0d61613dd46979b3611b0a40d4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

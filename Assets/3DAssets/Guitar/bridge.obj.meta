@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 407ab1ef98a108a4f8af65a3d226f89b
+guid: 64c5ce2eaa3ef6e48a59ac0aa16e7ac3
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mergedBlocksMat
+    second: {fileID: 2100000, guid: c70de8491961d424d8b49b5d9e57fdfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalPurple
+    second: {fileID: 2100000, guid: 67f9489f3ed478c4ab012aca93afd100, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shield
+    second: {fileID: 2100000, guid: c70de8491961d424d8b49b5d9e57fdfd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

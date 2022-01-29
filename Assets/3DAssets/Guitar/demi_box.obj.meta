@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: 3939c5de15a973842be38706ccb993d6
+guid: cc98c172077dc264f8ac8e30b5685c71
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 9b210538bb6fae943820dba43fa3429a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mergedBlocksMat
+    second: {fileID: 2100000, guid: 0b7e760db2fab9e4ca7ce8d0f3477e7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shield
+    second: {fileID: 2100000, guid: fa941bb531ea25f46a62afa4c56f6dc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 0b7e760db2fab9e4ca7ce8d0f3477e7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woodDark
+    second: {fileID: 2100000, guid: 089c345c8d54c194093cee85cf69cd26, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
