@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(AudioSource))]
-public class Instrument : MonoBehaviour, IPointerClickHandler
+public class Instrument : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private InstructionPanel instructionPanel;
@@ -38,24 +38,22 @@ public class Instrument : MonoBehaviour, IPointerClickHandler
         //TODO play the correct animation
 
 
-        if(_action.actionType == actionsToBuild[currentBuildActionIndex])
+        if (_action.actionType == actionsToBuild[currentBuildActionIndex])
         {
-            PlayPhrase(_action);
             currentBuildActionIndex++;
-            instructionPanel.NextStep();
-            if(currentBuildActionIndex == actionsToBuild.Length)
+            if (currentBuildActionIndex == actionsToBuild.Length)
             {
                 audioSource.PlayOneShot(fullMusic);
                 instructionPanel.WaitAndClose(fullMusic.length);
                 Debug.Log("you win!");
             }
+            else
+            {
+                PlayPhrase(_action);
+                instructionPanel.NextStep();
+            }
         }
 
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        instructionPanel.Open(this);
     }
 }
 
