@@ -1,5 +1,81 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5517089156427693256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4206077942019537056}
+  - component: {fileID: 3922009056669159948}
+  - component: {fileID: 6439812319420323740}
+  m_Layer: 5
+  m_Name: IntructionsPanel.Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4206077942019537056
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5517089156427693256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3778088045504377670}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -4.6567, y: 98.17224}
+  m_SizeDelta: {x: 3089.2764, y: 1479.5112}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3922009056669159948
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5517089156427693256}
+  m_CullTransparentMesh: 1
+--- !u!114 &6439812319420323740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5517089156427693256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7353528088247472593
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +87,7 @@ GameObject:
   - component: {fileID: 7353528088247472592}
   - component: {fileID: 7353528088247472595}
   m_Layer: 5
-  m_Name: UI.Steps
+  m_Name: InstructionsPanel.Steps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +114,7 @@ RectTransform:
   - {fileID: 7018960548477522187}
   - {fileID: 7018960548984255673}
   m_Father: {fileID: 3778088045504377670}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -82,7 +158,7 @@ GameObject:
   - component: {fileID: 7353528088602363688}
   - component: {fileID: 7353528088602363689}
   m_Layer: 5
-  m_Name: UI
+  m_Name: IntructionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +173,7 @@ RectTransform:
   m_GameObject: {fileID: 7353528088602363694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6546875, y: 0.6546875, z: 0.6546875}
+  m_LocalScale: {x: 0.37799996, y: 0.37799996, z: 0.25199997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3778088045504377670}
@@ -182,7 +258,7 @@ GameObject:
   - component: {fileID: 7465887959191852381}
   - component: {fileID: 526970254240490321}
   m_Layer: 5
-  m_Name: UI.TopImage
+  m_Name: InstructionsPanel.TopImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +277,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3778088045504377670}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -256,7 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3778088045504377670}
   m_Layer: 5
-  m_Name: UI.StepsParent
+  m_Name: InstructionsPanel.StepsParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,6 +350,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4206077942019537056}
   - {fileID: 6414333163268464668}
   - {fileID: 7353528088247472592}
   m_Father: {fileID: 7353528088602363690}
@@ -325,11 +402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7381436336188399682, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.8
+      value: InstructionsPanel.Step.8
       objectReference: {fileID: 0}
     - target: {fileID: 7411588281487407878, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.8.Nb
+      value: InstructionsPanel.Step.8.Nb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
@@ -379,11 +456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7381436336188399682, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.6
+      value: InstructionsPanel.Step.6
       objectReference: {fileID: 0}
     - target: {fileID: 7411588281487407878, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.6.Nb
+      value: InstructionsPanel.Step.6.Nb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
@@ -433,11 +510,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7381436336188399682, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.4
+      value: InstructionsPanel.Step.4
       objectReference: {fileID: 0}
     - target: {fileID: 7411588281487407878, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.4.Nb
+      value: InstructionsPanel.Step.4.Nb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
@@ -487,11 +564,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7381436336188399682, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.7
+      value: InstructionsPanel.Step.7
       objectReference: {fileID: 0}
     - target: {fileID: 7411588281487407878, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.7.Nb
+      value: InstructionsPanel.Step.7.Nb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
@@ -541,11 +618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7381436336188399682, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.2
+      value: InstructionsPanel.Step.2
       objectReference: {fileID: 0}
     - target: {fileID: 7411588281487407878, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.2.Nb
+      value: InstructionsPanel.Step.2.Nb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
@@ -595,11 +672,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7381436336188399682, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.3
+      value: InstructionsPanel.Step.3
       objectReference: {fileID: 0}
     - target: {fileID: 7411588281487407878, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.3.Nb
+      value: InstructionsPanel.Step.3.Nb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
@@ -649,11 +726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7381436336188399682, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.5
+      value: InstructionsPanel.Step.5
       objectReference: {fileID: 0}
     - target: {fileID: 7411588281487407878, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.5.Nb
+      value: InstructionsPanel.Step.5.Nb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
@@ -755,7 +832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7381436336188399682, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
       propertyPath: m_Name
-      value: UI.Step.1
+      value: InstructionsPanel.Step.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411588281487407878, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}
+      propertyPath: m_Name
+      value: InstructionsPanel.Step.1.Nb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e423d9d55bfea744b71b53eec28034c, type: 3}

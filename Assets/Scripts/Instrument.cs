@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(AudioSource))]
 public class Instrument : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private InstructionPanel instructionPanel;
+    [SerializeField] private GameObject instrumentVisual;
+    [SerializeField] private GameObject instrumentVisualCompleted;
+
+    [Header("Music Setup")]
     [SerializeField] private List<NoteDictionnary> notesSFX;
     [SerializeField] private List<ActionDictionnary> actionsSFX;
     [SerializeField] private BuildAction[] actionsToBuild;
@@ -33,14 +40,23 @@ public class Instrument : MonoBehaviour
         //TODO play the correct animation
 
 
-        if(_action.actionType == actionsToBuild[currentBuildActionIndex])
+        if (_action.actionType == actionsToBuild[currentBuildActionIndex])
         {
             PlayPhrase(_action);
             currentBuildActionIndex++;
-            if(currentBuildActionIndex == actionsToBuild.Length)
+            if (currentBuildActionIndex == actionsToBuild.Length)
             {
-                audioSource.PlayOneShot(fullMusic);
-                Debug.Log("you win!");
+                //audioSource.PlayOneShot(fullMusic);
+                instrumentVisual.SetActive(false);
+                instrumentVisualCompleted.SetActive(true);
+                //instructionPanel.WaitAndClose(fullMusic.length);
+                instructionPanel.Close();
+                if (name == "Guitar")
+                    MusicManager.Instance.AddGuitar();
+            }
+            else
+            {
+                instructionPanel.NextStep();
             }
         }
 
