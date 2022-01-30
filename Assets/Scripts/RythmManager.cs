@@ -13,6 +13,10 @@ public class RythmManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] beatLabels;
     [SerializeField] private Transform[] cursorPoses;
     [SerializeField] private MusicalAction[] buildActions;
+    [SerializeField] private TMP_FontAsset fondBasic;
+    [SerializeField] private TMP_FontAsset fondOutline;
+
+
 
     [Header("Inputs")]
     [SerializeField] InputActionReference[] keyboardInputs;
@@ -36,7 +40,9 @@ public class RythmManager : MonoBehaviour
 
     private void OnEnable()
     {
-        beatLabels[0].color = Color.green;
+        //beatLabels[0].GetComponent<TextMeshProUGUI>().font = fondBasic;
+        beatLabels[0].color = Color.black;
+        beatLabels[0].GetComponent<TextMeshProUGUI>().fontMaterial.SetColor("_OutlineColor", Color.white);
         foreach (InputActionReference i in keyboardInputs)
         {
             i.action.Enable();
@@ -57,7 +63,7 @@ public class RythmManager : MonoBehaviour
             int noteID = int.Parse(obj.action.name[obj.action.name.Length - 1].ToString());
             playerMelody.Add((Note)noteID-1);
             //Debug.Log("playerMelody.Count = " + playerMelody.Count);
-            beatLabels[playerMelody.Count - 1].text = noteID.ToString();
+            beatLabels[playerMelody.Count - 1].text = ((Note)noteID - 1).ToString();
         }
 
         if (playerMelody.Count == 4)
@@ -89,7 +95,9 @@ public class RythmManager : MonoBehaviour
             foreach (TextMeshProUGUI t in beatLabels)
             {
                 t.text = "";
+                //t.color = Color.black;
                 t.color = Color.black;
+                t.GetComponent<TextMeshProUGUI>().fontMaterial.SetColor("_OutlineColor", Color.white);
             }
             return;
         }
@@ -99,10 +107,14 @@ public class RythmManager : MonoBehaviour
         Debug.Log("Playing note = " + currentNote);
         MusicManager.Instance.currentInstrument.PlayNote(currentNote);
 
-        beatLabels[cursorIndex].color = Color.green;
+        beatLabels[cursorIndex].color = Color.white;  
+        beatLabels[cursorIndex].GetComponent<TextMeshProUGUI>().fontMaterial.SetColor("_OutlineColor", Color.black);
 
         if (lastCursorIndex >= 0)
+        {
             beatLabels[lastCursorIndex].color = Color.black;
+            beatLabels[lastCursorIndex].GetComponent<TextMeshProUGUI>().fontMaterial.SetColor("_OutlineColor", Color.white);
+        }
 
         cursor.transform.position = cursorPoses[cursorIndex].position;
     }
@@ -120,3 +132,5 @@ public class RythmManager : MonoBehaviour
         }
     }
 }
+
+
