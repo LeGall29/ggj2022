@@ -46,11 +46,11 @@ public class BuildStep : MonoBehaviour
                 break;
             case BuildAction.Clockwise:
                 movingPart.DOLocalMoveZ(originalPos.z + 0.5f, 1f);
-                movingPart.DOLocalRotate(new Vector3(originalRot.x, originalRot.y + 360, originalRot.z), 1f).OnComplete(() => { if (!_isCorrect) ResetPosRot(originalPos, originalRot); });
+                movingPart.DOLocalRotate(new Vector3(originalRot.x, originalRot.y, originalRot.z + 359), 1f, RotateMode.FastBeyond360).OnComplete(() => { if (!_isCorrect) ResetPosRot(originalPos, originalRot); });
                 break;
             case BuildAction.Unclockwise:
                 movingPart.DOLocalMoveZ(originalPos.z - 0.5f, 1f);
-                movingPart.DOLocalRotate(new Vector3(originalRot.x, originalRot.y - 360, originalRot.z), 1f).OnComplete(() => { if (!_isCorrect) ResetPosRot(originalPos, originalRot); });
+                movingPart.DOLocalRotate(new Vector3(originalRot.x, originalRot.y, originalRot.z - 359), 1f, RotateMode.FastBeyond360).OnComplete(() => { if (!_isCorrect) ResetPosRot(originalPos, originalRot); });
                 break;
         }
     }
