@@ -35,25 +35,25 @@ public class MusicManager : MonoBehaviour
         switch (_type)
         {
             case InstrumentType.Guitar:
-                guitarMusic.DOFade(guitarVolume, 1f);
+                guitarMusic.DOFade(guitarVolume, 3f);
                 guitarIsUnlocked = true;
                 break;
             case InstrumentType.Vibraphone:
-                vibraphoneMusic.DOFade(vibraphoneVolume, 1f);
+                vibraphoneMusic.DOFade(vibraphoneVolume, 3f);
                 vibraphoneIsUnlocked = true;
                 break;
             case InstrumentType.Trumpet:
-                trumpetMusic.DOFade(trumpetVolume, 1f);
+                trumpetMusic.DOFade(trumpetVolume, 3f);
                 trumpetIsUnlocked = true;
                 break;
         }
     }
     public void Mute()
     {
-        backgroundMusic.DOFade(0, 1f);
-        guitarMusic.DOFade(0, 1f);
-        trumpetMusic.DOFade(0, 1f);
-        vibraphoneMusic.DOFade(0, 1f);
+        backgroundMusic.DOFade(0, 2f);
+        guitarMusic.DOFade(0, 2f);
+        trumpetMusic.DOFade(0, 2f);
+        vibraphoneMusic.DOFade(0, 2f);
 
     }
     public void Unmute()
@@ -61,13 +61,13 @@ public class MusicManager : MonoBehaviour
         backgroundMusic.DOFade(1f, 1f);
 
         if (guitarIsUnlocked)
-            guitarMusic.DOFade(guitarVolume, 1f);
+            guitarMusic.DOFade(guitarVolume, 2f);
 
         if (trumpetIsUnlocked)
-            trumpetMusic.DOFade(trumpetVolume, 1f);
+            trumpetMusic.DOFade(trumpetVolume, 2f);
 
         if (vibraphoneIsUnlocked)
-            vibraphoneMusic.DOFade(vibraphoneVolume, 1f);
+            vibraphoneMusic.DOFade(vibraphoneVolume, 2f);
     }
 
 }
