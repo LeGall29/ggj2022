@@ -13,8 +13,6 @@ public class RythmManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] beatLabels;
     [SerializeField] private Transform[] cursorPoses;
     [SerializeField] private MusicalAction[] buildActions;
-    [SerializeField] private TMP_FontAsset fondBasic;
-    [SerializeField] private TMP_FontAsset fondOutline;
 
 
 
