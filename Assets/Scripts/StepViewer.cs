@@ -39,10 +39,15 @@ public class StepViewer : MonoBehaviour
         transform.DOMove(newPosition, 1).SetEase(Ease.OutQuart);
     }
 
-    public void MoveCameraToNextStep()
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>Return new step</returns>
+    public int MoveCameraToNextStep()
     {
         int temp = currentStep + 1;
         MoveCameraTo(temp);
+        return temp;
     }
 
     public void ZoomCamera(System.Action _callbackOnZoomed)
