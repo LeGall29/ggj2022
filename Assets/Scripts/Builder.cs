@@ -36,7 +36,15 @@ public class Builder : MonoBehaviour
     }
     public void Build(BuildAction _action, bool _isCorrect)
     {
-        steps[currentStepIndex].MovePart(_action, _isCorrect);
+        try
+        {
+            steps[currentStepIndex].MovePart(_action, _isCorrect);
+        }
+        catch (System.Exception e )
+        {
+            Debug.Log(e);
+        }
+        
     }
 
 }
