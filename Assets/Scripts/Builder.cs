@@ -9,13 +9,12 @@ public class Builder : MonoBehaviour
 
     private BuildAction[] currentBuildOrder = new BuildAction[8];
 
-    private int lastStepIndex = -1;
     private int currentStepIndex = -1;
+    public int CurrentStepIndex { get => currentStepIndex; }
 
     public void Initialize()
     {
         gameObject.SetActive(true);
-        lastStepIndex = -1;
         MusicManager.Instance.currentInstrument.ActionToBuild.CopyTo(currentBuildOrder, 0);
     }
 
@@ -26,11 +25,6 @@ public class Builder : MonoBehaviour
 
     public void SetCurrentStep(int _stepIndex)
     {
-        if(lastStepIndex != -1)
-        {
-            //steps[lastStepIndex].Toggle(false);
-        }
-        lastStepIndex = currentStepIndex;
         currentStepIndex = _stepIndex;
         //steps[currentStepIndex].Toggle(true);
     }
@@ -40,11 +34,11 @@ public class Builder : MonoBehaviour
         {
             steps[currentStepIndex].MovePart(_action, _isCorrect);
         }
-        catch (System.Exception e )
+        catch (System.Exception e)
         {
             Debug.Log(e);
         }
-        
+
     }
 
 }
