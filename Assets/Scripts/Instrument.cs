@@ -10,6 +10,9 @@ public class Instrument : MonoBehaviour
     [SerializeField] private BuildAction[] actionsToBuild;
     [SerializeField] private AudioClip fullMusic;
 
+    public Animator animator;
+    public bool isMusicBox = false; 
+
     private AudioSource audioSource;
     private int currentBuildActionIndex;
 
@@ -32,15 +35,26 @@ public class Instrument : MonoBehaviour
     {
         //TODO play the correct animation
 
+        //animator.SetTrigger(_action.actionType.ToString());
+
+        animator.Play(_action.actionType.ToString());
+
 
         if(_action.actionType == actionsToBuild[currentBuildActionIndex])
         {
             PlayPhrase(_action);
             currentBuildActionIndex++;
-            if(currentBuildActionIndex == actionsToBuild.Length)
+            if(currentBuildActionIndex == actionsToBuild.Length )
             {
-                audioSource.PlayOneShot(fullMusic);
-                Debug.Log("you win!");
+                if (!isMusicBox)
+                {
+                    audioSource.PlayOneShot(fullMusic);
+                    Debug.Log("you win!");
+                }
+                else
+                {
+                    currentBuildActionIndex = 0;
+                }
             }
         }
 
