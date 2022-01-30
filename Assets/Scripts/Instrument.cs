@@ -56,8 +56,7 @@ public class Instrument : MonoBehaviour
                 //instructionPanel.WaitAndClose(fullMusic.length);
                 instructionPanel.Close();
 
-                if (type == InstrumentType.Guitar)
-                    MusicManager.Instance.AddGuitar();
+                MusicManager.Instance.AddInstrumentMusic(type);
             }
             else
             {
