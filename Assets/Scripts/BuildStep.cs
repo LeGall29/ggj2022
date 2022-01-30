@@ -27,10 +27,10 @@ public class BuildStep : MonoBehaviour
         switch (_action)
         {
             case BuildAction.Pull:
-                movingPart.DOLocalMoveZ(originalPos.z + 2, 1f).OnComplete(() => { if (!_isCorrect) ResetPosRot(originalPos, originalRot); });
+                movingPart.DOLocalMoveZ(originalPos.z - 2, 1f).OnComplete(() => { if (!_isCorrect) ResetPosRot(originalPos, originalRot); });
                 break;
             case BuildAction.Push:
-                movingPart.DOLocalMoveZ(originalPos.z - 2, 1f).OnComplete(() => { if (!_isCorrect) ResetPosRot(originalPos, originalRot); });
+                movingPart.DOLocalMoveZ(originalPos.z + 2, 1f).OnComplete(() => { if (!_isCorrect) ResetPosRot(originalPos, originalRot); });
                 break;
             case BuildAction.Right:
                 movingPart.DOLocalMoveX(originalPos.x + 2, 1f).OnComplete(() => { if (!_isCorrect) ResetPosRot(originalPos, originalRot); });
