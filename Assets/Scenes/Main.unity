@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -481,6 +481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildOrder.Guitar.Step2.Models
       objectReference: {fileID: 0}
+    - target: {fileID: 8618330530756894196, guid: f91ee08e20b38c743bcb0be326cc7713, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: cf5385e32d8f82847a91f986be300a6a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91ee08e20b38c743bcb0be326cc7713, type: 3}
 --- !u!4 &137625526 stripped
@@ -3037,8 +3041,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e88aa3ce18cfb7e42ab33394cf328c4d, type: 2}
   - {fileID: 11400000, guid: da21ea2bf72dc4f46b7fc9418b4bd52e, type: 2}
   - {fileID: 11400000, guid: 4f0536d458d535d4c89bb405afb9210a, type: 2}
-  fondBasic: {fileID: 11400000, guid: f11d326380718c94ba85516db9930d51, type: 2}
-  fondOutline: {fileID: 11400000, guid: 91c20ae35dc492943a0efecfd506fe67, type: 2}
   keyboardInputs:
   - {fileID: -2275667385787947225, guid: 5890616b935f3584db083cc76507ff8e, type: 3}
   - {fileID: -4474957331966565539, guid: 5890616b935f3584db083cc76507ff8e, type: 3}
