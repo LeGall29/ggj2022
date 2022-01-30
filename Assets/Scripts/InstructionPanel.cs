@@ -57,12 +57,15 @@ public class InstructionPanel : MonoBehaviour
             vibraphoneBuilder.Initialize();
             currentBuilder = vibraphoneBuilder;
         }
-        currentBuilder.SetCurrentStep(0);
+        if(currentBuilder.CurrentStepIndex == -1)
+            currentBuilder.SetCurrentStep(0);
+        else
+            currentBuilder.SetCurrentStep(currentBuilder.CurrentStepIndex);
 
 
         GetComponent<RectTransform>().DOAnchorPos3DX(0f, 1.7f).SetEase(Ease.OutBack).OnComplete(() =>
         {
-            stepViewer.MoveCameraTo(0);
+            stepViewer.MoveCameraTo(currentBuilder.CurrentStepIndex);
             stepViewer.ZoomCamera(() =>
             {
                 instructionFrontUI.SetActive(true);
