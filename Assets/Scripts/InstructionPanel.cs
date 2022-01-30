@@ -72,6 +72,7 @@ public class InstructionPanel : MonoBehaviour
 
     public void Close()
     {
+        currentBuilder.Disable();
         MusicManager.Instance.Unmute();
         instructionFrontUI.SetActive(false);
         stepViewer.UnzoomCamera(() =>

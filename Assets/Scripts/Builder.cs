@@ -19,6 +19,11 @@ public class Builder : MonoBehaviour
         MusicManager.Instance.currentInstrument.ActionToBuild.CopyTo(currentBuildOrder, 0);
     }
 
+    public void Disable()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void SetCurrentStep(int _stepIndex)
     {
         if(lastStepIndex != -1)
