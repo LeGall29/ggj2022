@@ -53,8 +53,8 @@ public class Instrument : MonoBehaviour
                 //audioSource.PlayOneShot(fullMusic);
                 instrumentVisual.SetActive(false);
                 instrumentVisualCompleted.SetActive(true);
-                //instructionPanel.WaitAndClose(fullMusic.length);
-                instructionPanel.Close();
+                instructionPanel.WaitAndClose(2f);
+                //instructionPanel.Close();
 
                 MusicManager.Instance.AddInstrumentMusic(type);
             }
