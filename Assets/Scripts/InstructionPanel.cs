@@ -8,7 +8,8 @@ public class InstructionPanel : MonoBehaviour
 {
     [SerializeField] private StepViewer stepViewer;
     [SerializeField] private GameObject instruments;
-    [SerializeField] private GameObject UIFront;
+    [SerializeField] private GameObject instructionFrontUI;
+    [SerializeField] private GameObject foreground;
     [SerializeField] private Builder guitarBuilder;
     [SerializeField] private Builder vibraphoneBuilder;
     [SerializeField] private Builder trumpetBuilder;
@@ -18,8 +19,15 @@ public class InstructionPanel : MonoBehaviour
 
     public void NextStep()
     {
+        StartCoroutine(WaitThenNextStep());
+    }
+
+    private IEnumerator WaitThenNextStep()
+    {
+        yield return new WaitForSeconds(2f);
         int newStep = stepViewer.MoveCameraToNextStep();
         currentBuilder.SetCurrentStep(newStep);
+
     }
 
     public void Build(BuildAction _action, bool _isCorrect)
@@ -31,6 +39,7 @@ public class InstructionPanel : MonoBehaviour
     {
         MusicManager.Instance.Mute();
         instruments.SetActive(false);
+        foreground.SetActive(false);
         MusicManager.Instance.currentInstrument = _instrument;
 
         if (MusicManager.Instance.currentInstrument.type == InstrumentType.Guitar)
@@ -56,21 +65,23 @@ public class InstructionPanel : MonoBehaviour
             stepViewer.MoveCameraTo(0);
             stepViewer.ZoomCamera(() =>
             {
-                UIFront.SetActive(true);
+                instructionFrontUI.SetActive(true);
             });
         });
     }
 
     public void Close()
     {
+        currentBuilder.Disable();
         MusicManager.Instance.Unmute();
-        UIFront.SetActive(false);
+        instructionFrontUI.SetActive(false);
         stepViewer.UnzoomCamera(() =>
         {
             GetComponent<RectTransform>().DOAnchorPos3DX(-1080f, 1.7f).SetEase(Ease.InBack).OnComplete(() =>
-           {
-               instruments.SetActive(true);
-           });
+            {
+                instruments.SetActive(true);
+                foreground.SetActive(true);
+            });
         });
     }
 

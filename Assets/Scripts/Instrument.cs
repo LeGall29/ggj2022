@@ -53,11 +53,10 @@ public class Instrument : MonoBehaviour
                 //audioSource.PlayOneShot(fullMusic);
                 instrumentVisual.SetActive(false);
                 instrumentVisualCompleted.SetActive(true);
-                //instructionPanel.WaitAndClose(fullMusic.length);
-                instructionPanel.Close();
+                instructionPanel.WaitAndClose(2f);
+                //instructionPanel.Close();
 
-                if (type == InstrumentType.Guitar)
-                    MusicManager.Instance.AddGuitar();
+                MusicManager.Instance.AddInstrumentMusic(type);
             }
             else
             {
