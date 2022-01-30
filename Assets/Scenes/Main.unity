@@ -8103,6 +8103,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1640960041}
     m_Modifications:
+    - target: {fileID: 3470268186510928301, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268186510928302, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3470268186555585872, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
       propertyPath: outlineTargets.Array.data[0].IsVisible
       value: 0
@@ -8183,6 +8191,14 @@ PrefabInstance:
       propertyPath: outlineTargets.Array.data[19].IsVisible
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3470268186609688969, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268186609688980, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3470268186713629306, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
       propertyPath: outlineTargets.Array.data[0].IsVisible
       value: 0
@@ -8230,6 +8246,22 @@ PrefabInstance:
     - target: {fileID: 3470268186758663728, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
       propertyPath: outlineTargets.Array.data[4].IsVisible
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268186793876645, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268186793876646, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268187002096931, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268187002096942, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3470268187024909383, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
       propertyPath: outlineTargets.Array.data[0].IsVisible
@@ -8291,6 +8323,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuilderOrder.Vibraphone
       objectReference: {fileID: 0}
+    - target: {fileID: 3470268187154357993, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268187192740026, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268187192740031, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3470268187657567515, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
       propertyPath: outlineTargets.Array.data[0].IsVisible
       value: 0
@@ -8379,6 +8423,22 @@ PrefabInstance:
       propertyPath: outlineTargets.Array.data[7].IsVisible
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3470268188413703465, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268188413703476, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268188481781635, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470268188481781646, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4332548901885821030, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
       propertyPath: outlineTargets.Array.data[0].IsVisible
       value: 0
@@ -8390,6 +8450,14 @@ PrefabInstance:
     - target: {fileID: 4332548901885821030, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
       propertyPath: outlineTargets.Array.data[2].IsVisible
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525574618659822529, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538983260553263016, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
+      propertyPath: orthographic size
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6860ee8156146cc46a38432cb70e2be4, type: 3}
