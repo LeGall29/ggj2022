@@ -6,8 +6,12 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(AudioSource))]
 public class Instrument : MonoBehaviour
 {
+    [Header("Settings")]
+    public InstrumentType type;
+
     [Header("References")]
     [SerializeField] private InstructionPanel instructionPanel;
+    [SerializeField] private Builder builder;
     [SerializeField] private GameObject instrumentVisual;
     [SerializeField] private GameObject instrumentVisualCompleted;
 
@@ -15,6 +19,8 @@ public class Instrument : MonoBehaviour
     [SerializeField] private List<NoteDictionnary> notesSFX;
     [SerializeField] private List<ActionDictionnary> actionsSFX;
     [SerializeField] private BuildAction[] actionsToBuild;
+    public BuildAction[] ActionToBuild { get => actionsToBuild; }
+
     [SerializeField] private AudioClip fullMusic;
 
     private AudioSource audioSource;
@@ -37,12 +43,10 @@ public class Instrument : MonoBehaviour
 
     public void PlayAction(MusicalAction _action)
     {
-        //TODO play the correct animation
-
-
         if (_action.actionType == actionsToBuild[currentBuildActionIndex])
         {
             PlayPhrase(_action);
+            instructionPanel.Build(_action.actionType, true);
             currentBuildActionIndex++;
             if (currentBuildActionIndex == actionsToBuild.Length)
             {
@@ -51,7 +55,8 @@ public class Instrument : MonoBehaviour
                 instrumentVisualCompleted.SetActive(true);
                 //instructionPanel.WaitAndClose(fullMusic.length);
                 instructionPanel.Close();
-                if (name == "Guitar")
+
+                if (type == InstrumentType.Guitar)
                     MusicManager.Instance.AddGuitar();
             }
             else
@@ -59,15 +64,19 @@ public class Instrument : MonoBehaviour
                 instructionPanel.NextStep();
             }
         }
+        else
+        {
+            instructionPanel.Build(_action.actionType, false);
+        }
 
     }
 }
 
 [System.Serializable]
-public enum IntrumentType
+public enum InstrumentType
 {
     Guitar,
-    Xylophone,
+    Vibraphone,
     Trumpet
 }
 
