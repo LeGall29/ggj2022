@@ -13,8 +13,7 @@ public class RythmManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] beatLabels;
     [SerializeField] private Transform[] cursorPoses;
     [SerializeField] private MusicalAction[] buildActions;
-
-
+    [SerializeField] private GameObject easter;
 
     [Header("Inputs")]
     [SerializeField] InputActionReference[] keyboardInputs;
@@ -126,6 +125,23 @@ public class RythmManager : MonoBehaviour
             {
                 Debug.Log("you are doing a " + a.actionType.ToString());
                 MusicManager.Instance.currentInstrument.PlayAction(a);
+            }
+        }
+        if(easter != null)
+            CheckEasterEgg();
+    }
+
+    private Note[] easterEgg = new Note[4] { Note.D4, Note.D4, Note.D5, Note.A4 };
+    private void CheckEasterEgg()
+    {
+        foreach (MusicalAction a in buildActions)
+        {
+            //Debug.Log($"Trying to know if you played {a.actionType} ({a.phrase.ToString()})");
+            if (Enumerable.SequenceEqual(easterEgg, playerMelody.ToArray()))
+            {
+                Debug.Log("megalovania");
+                easter.SetActive(true);
+                Destroy(easter, 1.1f);
             }
         }
     }
